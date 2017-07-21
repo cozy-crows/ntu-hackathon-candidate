@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: tw-ntu-hack
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/ntu_hack?useUnicode=true&characterEncoding=utf8&useSSL=false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+    database: MYSQL
+    show_sql: false
+    properties:
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: true
+liquibase:
+  enabled: true
+  change-log: classpath:config/liquibase/master.xml
+facebook:
+  graph-url: https://graph.facebook.com/v2.10/
+  access-token: someone-token
+  user-id: someone-user-id
+  page-hong: 852926604746233  // 洪？？
+
