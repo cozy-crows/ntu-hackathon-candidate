@@ -1,4 +1,4 @@
-package com.example.demo.pojos;
+package com.example.demo.dtos.facebook;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,11 +9,14 @@ import lombok.Data;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
-public class SubAttachmentsData {
-    @JsonProperty("media")
-    private Media media;
+public class AttachmentsData {
+
+    @JsonProperty("subattachments")
+    private SubAttachments subAttachments;
     @JsonProperty("target")
     private Target target;
+    @JsonProperty("title")
+    private String title;
     @JsonProperty("type")
     private String type;
     @JsonProperty("url")

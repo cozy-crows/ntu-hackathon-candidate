@@ -1,4 +1,4 @@
-package com.example.demo.pojos;
+package com.example.demo.dtos.facebook;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,9 +9,13 @@ import lombok.Data;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
-public class From {
-    @JsonProperty("name")
-    private String name;
+public class CommentsData {
+    @JsonProperty("created_time")
+    private String createdTime;
+    @JsonProperty("from")
+    private From from;
+    @JsonProperty("message")
+    private String message;
     @JsonProperty("id")
     private String id;
 }

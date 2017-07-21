@@ -1,4 +1,4 @@
-package com.example.demo.pojos;
+package com.example.demo.dtos.facebook;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

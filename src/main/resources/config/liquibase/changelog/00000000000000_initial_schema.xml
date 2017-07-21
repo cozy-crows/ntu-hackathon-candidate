@@ -3,19 +3,324 @@
                    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-    <changeSet id="00000000000000" author="jerry">
-        <createTable tableName="fb_user">
-            <column name="user_id" type="varchar(255)">
-                <constraints primaryKey="true"/>
-            </column>
-
-            <column name="name" type="varchar(255)">
+    <changeSet author="delphi (generated)" id="20170703-1132-1">
+        <createTable tableName="QRTZ_BLOB_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
                 <constraints nullable="false"/>
             </column>
-
-            <column name="gender" type="varchar(255)"/>
-            <column name="link" type="varchar(255)"/>
-
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BLOB_DATA" type="BLOB"/>
         </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-2">
+        <createTable tableName="QRTZ_CALENDARS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CALENDAR_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CALENDAR" type="BLOB">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-3">
+        <createTable tableName="QRTZ_CRON_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CRON_EXPRESSION" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIME_ZONE_ID" type="VARCHAR(80)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-4">
+        <createTable tableName="QRTZ_FIRED_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ENTRY_ID" type="VARCHAR(95)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INSTANCE_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRED_TIME" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SCHED_TIME" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PRIORITY" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATE" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_NAME" type="VARCHAR(200)"/>
+            <column name="JOB_GROUP" type="VARCHAR(200)"/>
+            <column name="IS_NONCONCURRENT" type="VARCHAR(1)"/>
+            <column name="REQUESTS_RECOVERY" type="VARCHAR(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-5">
+        <createTable tableName="QRTZ_JOB_DETAILS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR(250)"/>
+            <column name="JOB_CLASS_NAME" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_DURABLE" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_NONCONCURRENT" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IS_UPDATE_DATA" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REQUESTS_RECOVERY" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_DATA" type="BLOB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-6">
+        <createTable tableName="QRTZ_LOCKS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCK_NAME" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-7">
+        <createTable tableName="QRTZ_PAUSED_TRIGGER_GRPS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-8">
+        <createTable tableName="QRTZ_SCHEDULER_STATE">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INSTANCE_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LAST_CHECKIN_TIME" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CHECKIN_INTERVAL" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-9">
+        <createTable tableName="QRTZ_SIMPLE_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REPEAT_COUNT" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REPEAT_INTERVAL" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TIMES_TRIGGERED" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-10">
+        <createTable tableName="QRTZ_SIMPROP_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STR_PROP_1" type="VARCHAR(512)"/>
+            <column name="STR_PROP_2" type="VARCHAR(512)"/>
+            <column name="STR_PROP_3" type="VARCHAR(512)"/>
+            <column name="INT_PROP_1" type="INT"/>
+            <column name="INT_PROP_2" type="INT"/>
+            <column name="LONG_PROP_1" type="BIGINT"/>
+            <column name="LONG_PROP_2" type="BIGINT"/>
+            <column name="DEC_PROP_1" type="DECIMAL(13, 4)"/>
+            <column name="DEC_PROP_2" type="DECIMAL(13, 4)"/>
+            <column name="BOOL_PROP_1" type="VARCHAR(1)"/>
+            <column name="BOOL_PROP_2" type="VARCHAR(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-11">
+        <createTable tableName="QRTZ_TRIGGERS">
+            <column name="SCHED_NAME" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_NAME" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JOB_GROUP" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR(250)"/>
+            <column name="NEXT_FIRE_TIME" type="BIGINT"/>
+            <column name="PREV_FIRE_TIME" type="BIGINT"/>
+            <column name="PRIORITY" type="INT"/>
+            <column name="TRIGGER_STATE" type="VARCHAR(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TRIGGER_TYPE" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="START_TIME" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="END_TIME" type="BIGINT"/>
+            <column name="CALENDAR_NAME" type="VARCHAR(200)"/>
+            <column name="MISFIRE_INSTR" type="SMALLINT"/>
+            <column name="JOB_DATA" type="BLOB"/>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet author="delphi (generated)" id="20170703-1132-12">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP"
+                       constraintName="PRIMARY" tableName="QRTZ_BLOB_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-13">
+        <addPrimaryKey columnNames="SCHED_NAME, CALENDAR_NAME" constraintName="PRIMARY"
+                       tableName="QRTZ_CALENDARS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-14">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP"
+                       constraintName="PRIMARY" tableName="QRTZ_CRON_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-15">
+        <addPrimaryKey columnNames="SCHED_NAME, ENTRY_ID" constraintName="PRIMARY"
+                       tableName="QRTZ_FIRED_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-16">
+        <addPrimaryKey columnNames="SCHED_NAME, JOB_NAME, JOB_GROUP" constraintName="PRIMARY"
+                       tableName="QRTZ_JOB_DETAILS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-17">
+        <addPrimaryKey columnNames="SCHED_NAME, LOCK_NAME" constraintName="PRIMARY"
+                       tableName="QRTZ_LOCKS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-18">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_GROUP" constraintName="PRIMARY"
+                       tableName="QRTZ_PAUSED_TRIGGER_GRPS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-19">
+        <addPrimaryKey columnNames="SCHED_NAME, INSTANCE_NAME" constraintName="PRIMARY"
+                       tableName="QRTZ_SCHEDULER_STATE"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-20">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP"
+                       constraintName="PRIMARY" tableName="QRTZ_SIMPLE_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-21">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP"
+                       constraintName="PRIMARY" tableName="QRTZ_SIMPROP_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-22">
+        <addPrimaryKey columnNames="SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP"
+                       constraintName="PRIMARY" tableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-23">
+        <createIndex indexName="SCHED_NAME" tableName="QRTZ_TRIGGERS">
+            <column name="SCHED_NAME"/>
+            <column name="JOB_NAME"/>
+            <column name="JOB_GROUP"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-24">
+        <addForeignKeyConstraint baseColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 baseTableName="QRTZ_BLOB_TRIGGERS"
+                                 constraintName="qrtz_blob_triggers_ibfk_1" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 referencedTableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-25">
+        <addForeignKeyConstraint baseColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 baseTableName="QRTZ_CRON_TRIGGERS"
+                                 constraintName="qrtz_cron_triggers_ibfk_1" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 referencedTableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-26">
+        <addForeignKeyConstraint baseColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 baseTableName="QRTZ_SIMPLE_TRIGGERS"
+                                 constraintName="qrtz_simple_triggers_ibfk_1" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 referencedTableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-27">
+        <addForeignKeyConstraint baseColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 baseTableName="QRTZ_SIMPROP_TRIGGERS"
+                                 constraintName="qrtz_simprop_triggers_ibfk_1" deferrable="false"
+                                 initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION"
+                                 referencedColumnNames="SCHED_NAME,TRIGGER_NAME,TRIGGER_GROUP"
+                                 referencedTableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+    <changeSet author="delphi (generated)" id="20170703-1132-28">
+        <addForeignKeyConstraint baseColumnNames="SCHED_NAME,JOB_NAME,JOB_GROUP"
+                                 baseTableName="QRTZ_TRIGGERS" constraintName="qrtz_triggers_ibfk_1"
+                                 deferrable="false" initiallyDeferred="false" onDelete="NO ACTION"
+                                 onUpdate="NO ACTION"
+                                 referencedColumnNames="SCHED_NAME,JOB_NAME,JOB_GROUP"
+                                 referencedTableName="QRTZ_JOB_DETAILS"/>
     </changeSet>
 </databaseChangeLog>

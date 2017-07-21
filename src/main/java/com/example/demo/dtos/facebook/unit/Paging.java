@@ -1,4 +1,4 @@
-package com.example.demo.pojos;
+package com.example.demo.dtos.facebook.unit;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

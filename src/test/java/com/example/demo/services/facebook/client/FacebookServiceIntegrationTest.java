@@ -1,7 +1,8 @@
 package com.example.demo.services.facebook.client;
 
-import com.example.demo.pojos.FacebookUser;
-import com.example.demo.pojos.PageInfo;
+import com.example.demo.dtos.facebook.FacebookUser;
+import com.example.demo.dtos.facebook.PageInfo;
+import com.example.demo.dtos.facebook.unit.NodeList;
 import com.example.demo.properties.FacebookProperties;
 import org.junit.Assert;
 import org.junit.Test;
@@ -47,7 +48,9 @@ public class FacebookServiceIntegrationTest {
         String pageId = "312727242083229";
         String accessToken = facebookProperties.getAccessToken();
 
-        Response<PageInfo> pageInfo = facebookService.getPagePosts(pageId, accessToken).execute();
-        Assert.assertEquals(200, pageInfo.code());
+        Response<NodeList<PageInfo>> pageInfos =
+                facebookService.getPagePosts(pageId, accessToken, "1", null, null).execute();
+        System.out.println(pageInfos.body());
+        Assert.assertEquals(200, pageInfos.code());
     }
 }
