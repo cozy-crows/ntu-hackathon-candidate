@@ -36,7 +36,7 @@ public class FacebookServiceIntegrationTest {
     public void assertGetUserInfoSuccess() throws IOException {
         // 丁小宇 Test
         String userId = "100340840340866";
-        String accessToken = facebookProperties.getJarvisLiuToken();
+        String accessToken = facebookProperties.getAccessToken();
         Response<FacebookUser> fbUser = facebookService.getUser(userId, accessToken).execute();
         Assert.assertEquals(200, fbUser.code());
     }
@@ -45,7 +45,7 @@ public class FacebookServiceIntegrationTest {
     public void assertGetPagePostsSuccess() throws IOException {
         // 還我票票花
         String pageId = "312727242083229";
-        String accessToken = facebookProperties.getJarvisLiuToken();
+        String accessToken = facebookProperties.getAccessToken();
 
         Response<PageInfo> pageInfo = facebookService.getPagePosts(pageId, accessToken).execute();
         Assert.assertEquals(200, pageInfo.code());

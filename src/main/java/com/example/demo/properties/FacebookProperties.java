@@ -16,10 +16,11 @@ public class FacebookProperties {
     private String graphUrl;
 
     @NotNull
-    private String jarvisLiuToken;
+    private String accessToken;
 
     @NotNull
-    private String jarvisLiuUserId;
+    private String userId;
 
+    @NotNull
     private String pageHong;
 }
