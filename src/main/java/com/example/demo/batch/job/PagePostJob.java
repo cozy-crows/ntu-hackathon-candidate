@@ -24,6 +24,7 @@ import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 
 import java.util.List;
+import java.util.Map;
 import javax.inject.Inject;
 
 /**
@@ -81,11 +82,15 @@ public class PagePostJob extends UradJob {
     private Step pageJobStep() {
         return stepBuilderFactory.get(STEP_NAME)
                 .allowStartIfComplete(true)     // 如果 step 已經完成, 可以重新執行
-                .<FbPage, List<PostInfo>>chunk(1)
+                .<FbPage, Map<FbPage, List<PostInfo>>>chunk(1)
                 .reader(fbPageReader)
                 .processor(getPagePostsProcessor)
                 .writer(pagePostsWriter)
                 .taskExecutor(getTaskExecutor())
                 .build();
+    }
+
+    public Job getPagePostJob() {
+        return getJob();
     }
 }

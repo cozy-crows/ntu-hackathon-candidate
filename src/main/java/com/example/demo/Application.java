@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-//@EnableJpaRepositories(basePackages = "com.example.demo.repositories.facebook")
+@EnableJpaRepositories(basePackages = "com.example.demo.repositories")
 @EnableJpaAuditing
 @SpringBootApplication
 public class Application {
