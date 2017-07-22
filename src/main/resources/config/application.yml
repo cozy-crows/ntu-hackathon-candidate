@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   application:
     name: tw-ntu-hack
@@ -7,6 +8,7 @@ spring:
     username: root
     password:
     url: jdbc:mysql://localhost:3306/ntu_hack?useUnicode=true&characterEncoding=utf8&useSSL=false
+
   jpa:
     database-platform: org.hibernate.dialect.MySQLInnoDBDialect
     database: MYSQL
@@ -15,12 +17,25 @@ spring:
       hibernate.cache.use_second_level_cache: true
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: true
+
 liquibase:
   enabled: true
   change-log: classpath:config/liquibase/master.xml
+
 facebook:
   graph-url: https://graph.facebook.com/v2.10/
   access-token: someone-token
   user-id: someone-user-id
   page-hong: 852926604746233
 
+# schedule indicates the frequency to poll data from different source
+# http://www.quartz-scheduler.org/documentation/quartz-2.2.x/configuration/
+# 要執行排程請自行改為 true
+quartz:
+  enabled: false
+
+# cron expressions - http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/tutorial-lesson-06#lesson-6:-crontrigger
+job:
+    time-zone: Asia/Taipei
+    # 秒 分 時 日 月 週 年
+    page-post-job-cron: 0 0 0 * * ?
