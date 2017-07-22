@@ -1,10 +1,8 @@
 package com.example.demo.batch.processors;
 
-import com.example.demo.dtos.facebook.PageInfo;
+import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.entities.FbPage;
-import com.example.demo.entities.PagePost;
 import com.example.demo.services.facebook.client.FacebookClient;
-import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemProcessor;
@@ -12,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
 import javax.inject.Inject;
 
 /**
@@ -21,7 +18,7 @@ import javax.inject.Inject;
 @Slf4j
 @Component
 @StepScope
-public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PageInfo>> {
+public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PostInfo>> {
 
     @Value("${facebook.access-token}")
     private String accessToken;
@@ -30,7 +27,7 @@ public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PageInf
     private FacebookClient facebookClient;
 
     @Override
-    public List<PageInfo> process(FbPage page) throws Exception {
+    public List<PostInfo> process(FbPage page) throws Exception {
         log.info("GetPagePostsProcessor process: {}", page.getName());
         return null;
 //        return facebookClient.getAllPageInfo(page.getPageId(), accessToken);

@@ -1,7 +1,6 @@
 package com.example.demo.services.facebook.client;
 
 import com.example.demo.dtos.facebook.FacebookUser;
-import com.example.demo.dtos.facebook.PageInfo;
 import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.dtos.facebook.unit.NodeList;
 import retrofit2.Call;
@@ -38,7 +37,8 @@ public interface FacebookService {
 //                                @Query("after") String after,
 //                                @Query("before") String before);
 
-    @GET("{pageId}?fields=posts")
+    @GET("{pageId}/posts?fields=fields=id,created_time,message,actions,place,message_tags,targeting,attachments," +
+            "child_attachments,reactions")
     Call<NodeList<PostInfo>> getPagePosts(@Path("pageId") String pageId,
                                           @Query("access_token") String accessToken,
                                           @Query("limit") String limit,

@@ -1,6 +1,5 @@
 package com.example.demo.services.facebook.client;
 
-import com.example.demo.dtos.facebook.PageInfo;
 import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.dtos.facebook.unit.NodeList;
 import lombok.extern.slf4j.Slf4j;
