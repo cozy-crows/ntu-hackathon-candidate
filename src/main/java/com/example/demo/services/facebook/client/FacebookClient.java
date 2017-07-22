@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface FacebookClient {
 
-    List<PostInfo> getAllPageInfo(final String pageId,
-                                  final String accessToken) throws IOException;
+    List<PostInfo> getAllPosts(final String pageId,
+                               final String accessToken) throws IOException;
 }

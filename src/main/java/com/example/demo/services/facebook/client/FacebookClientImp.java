@@ -25,7 +25,7 @@ public class FacebookClientImp implements FacebookClient {
     private FacebookService facebookService;
 
     @Override
-    public List<PostInfo> getAllPageInfo(String pageId, String accessToken) throws IOException {
+    public List<PostInfo> getAllPosts(String pageId, String accessToken) throws IOException {
         NodeList<PostInfo> postInfoNodeList;
         String nextPage = null;
         List<PostInfo> postInfos = new ArrayList<>();

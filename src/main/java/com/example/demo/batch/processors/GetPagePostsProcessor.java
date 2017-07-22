@@ -30,6 +30,6 @@ public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PostInf
     public List<PostInfo> process(FbPage page) throws Exception {
         log.info("GetPagePostsProcessor process: {}", page.getName());
         return null;
-//        return facebookClient.getAllPageInfo(page.getPageId(), accessToken);
+//        return facebookClient.getAllPosts(page.getPageId(), accessToken);
     }
 }
