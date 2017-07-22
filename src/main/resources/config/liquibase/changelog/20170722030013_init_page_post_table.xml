@@ -1,0 +1,26 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+
+    <changeSet id="20170722030013-1" author="jerry">
+        <createTable tableName="page_post">
+
+            <column name="post_id" type="varchar(127)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="message" type="varchar(1000)"/>
+            <column name="story" type="varchar(255)"/>
+            <column name="created_time" type="varchar(255)"/>
+
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

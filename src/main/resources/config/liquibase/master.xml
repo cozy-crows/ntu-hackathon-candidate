@@ -5,5 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722030012_init_fb_page_table.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170722030013_init_page_post_table.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>

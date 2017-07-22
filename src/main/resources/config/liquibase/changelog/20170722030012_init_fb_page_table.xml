@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+
+    <changeSet id="20170711135400-1" author="jerry">
+        <createTable tableName="fb_page">
+
+            <column name="page_id" type="varchar(127)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <!--初始化 jarvis liu 的 fb_user 資料-->
+    <changeSet id="20170711135400-2" author="jerry">
+        <insert tableName="fb_page">
+            <column name="page_id" value="852926604746233"/>
+            <column name="name" value="洪慈庸"/>
+            <column name="created_date" value="${now}"/>
+        </insert>
+
+        <insert tableName="fb_page">
+            <column name="page_id" value="136845026417486"/>
+            <column name="name" value="柯文哲"/>
+            <column name="created_date" value="${now}"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

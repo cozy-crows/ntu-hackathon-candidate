@@ -14,4 +14,5 @@ public class PageInfo {
     private Posts posts;
     @JsonProperty("id")
     private String id;
+
 }
