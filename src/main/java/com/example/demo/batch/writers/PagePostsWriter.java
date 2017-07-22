@@ -1,7 +1,6 @@
 package com.example.demo.batch.writers;
 
-import com.example.demo.dtos.facebook.PageInfo;
-import com.example.demo.entities.PagePost;
+import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.repositories.PagePostRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +17,7 @@ import javax.inject.Inject;
 @Slf4j
 @Component
 @StepScope
-public class PagePostsWriter implements ItemWriter<List<PageInfo>> {
+public class PagePostsWriter implements ItemWriter<List<PostInfo>> {
 
     @Inject
     private PagePostRepository pagePostRepository;
@@ -27,18 +26,18 @@ public class PagePostsWriter implements ItemWriter<List<PageInfo>> {
     private ObjectMapper objectMapper;
 
     @Override
-    public void write(List<? extends List<PageInfo>> pageInfoLists) throws Exception {
+    public void write(List<? extends List<PostInfo>> pageInfoLists) throws Exception {
         pageInfoLists.parallelStream()
                 .map(pageInfoList -> {
-                  return null;
+                    return null;
                 });
     }
 
-    private void updatePagePost(List<PageInfo> pageInfoList) {
+    private void updatePagePost(List<PostInfo> pageInfoList) {
 
     }
 
-    public void writeToJsonFile(List<PageInfo> pageInfoList) {
+    public void writeToJsonFile(List<PostInfo> pageInfoList) {
 
     }
 }

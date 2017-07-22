@@ -1,4 +1,4 @@
-package com.example.demo.dtos.facebook;
+package com.example.demo.dtos.facebook.post.comment;
 
 import com.example.demo.dtos.facebook.unit.Paging;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -8,15 +8,15 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * Created by jerry on 2017/7/21.
+ * Created by jerry on 2017/7/22.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
-public class Comments {
-
+public class Likes {
     @JsonProperty("data")
-    private List<CommentsData> data = null;
+    private List<LikesData> data = null;
     @JsonProperty("paging")
     private Paging paging;
-
+    @JsonProperty("summary")
+    private Summary summary;
 }

@@ -3,9 +3,8 @@ package com.example.demo.batch.job;
 import com.example.demo.batch.processors.GetPagePostsProcessor;
 import com.example.demo.batch.readers.FbPageReader;
 import com.example.demo.batch.writers.PagePostsWriter;
-import com.example.demo.dtos.facebook.PageInfo;
+import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.entities.FbPage;
-import com.example.demo.entities.PagePost;
 import com.example.demo.properties.JobProperties;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
@@ -82,7 +81,7 @@ public class PagePostJob extends UradJob {
     private Step pageJobStep() {
         return stepBuilderFactory.get(STEP_NAME)
                 .allowStartIfComplete(true)     // 如果 step 已經完成, 可以重新執行
-                .<FbPage, List<PageInfo>>chunk(1)
+                .<FbPage, List<PostInfo>>chunk(1)
                 .reader(fbPageReader)
                 .processor(getPagePostsProcessor)
                 .writer(pagePostsWriter)

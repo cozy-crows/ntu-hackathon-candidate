@@ -1,6 +1,5 @@
 package com.example.demo.services.facebook.client;
 
-import com.example.demo.dtos.facebook.PageInfo;
 import com.example.demo.dtos.facebook.post.PostInfo;
 import com.example.demo.dtos.facebook.unit.NodeList;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +25,7 @@ public class FacebookClientImp implements FacebookClient {
     private FacebookService facebookService;
 
     @Override
-    public List<PostInfo> getAllPageInfo(String pageId, String accessToken) throws IOException {
+    public List<PostInfo> getAllPosts(String pageId, String accessToken) throws IOException {
         NodeList<PostInfo> postInfoNodeList;
         String nextPage = null;
         List<PostInfo> postInfos = new ArrayList<>();
