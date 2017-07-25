@@ -38,7 +38,7 @@ public class PagePostsWriter implements ItemWriter<Map<FbPage, List<PostInfo>>> 
 
     @Override
     public void write(List<? extends Map<FbPage, List<PostInfo>>> postMapList) throws Exception {
-        postMapList.stream()
+        postMapList.parallelStream()
                 .forEach(postMap -> {
                     updatePagePost(postMap);
 
