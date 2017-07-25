@@ -57,7 +57,7 @@ public class BatchConfiguration {
         factory.setDataSource(dataSource);
         factory.setJobFactory(jobFactory);
         factory.setTransactionManager(transactionManager);
-        factory.setConfigLocation(resourceLoader.getResource("classpath:quartz.properties"));
+        factory.setConfigLocation(resourceLoader.getResource("classpath:/config/quartz.properties"));
         factory.setApplicationContextSchedulerContextKey("applicationContext");
         factory.setTaskExecutor(taskExecutor);
         factory.setTriggers(triggers);

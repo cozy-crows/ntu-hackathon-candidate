@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -19,6 +20,7 @@ public class PagePost {
     @Column(name = "post_id")
     private String postId;
 
+    @Lob
     @Column(name = "message")
     private String message;
 

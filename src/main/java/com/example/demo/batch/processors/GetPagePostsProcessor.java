@@ -9,7 +9,9 @@ import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.inject.Inject;
 
 /**
@@ -18,7 +20,7 @@ import javax.inject.Inject;
 @Slf4j
 @Component
 @StepScope
-public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PostInfo>> {
+public class GetPagePostsProcessor implements ItemProcessor<FbPage, Map<FbPage, List<PostInfo>>> {
 
     @Value("${facebook.access-token}")
     private String accessToken;
@@ -27,9 +29,11 @@ public class GetPagePostsProcessor implements ItemProcessor<FbPage, List<PostInf
     private FacebookClient facebookClient;
 
     @Override
-    public List<PostInfo> process(FbPage page) throws Exception {
+    public Map<FbPage, List<PostInfo>> process(FbPage page) throws Exception {
         log.info("GetPagePostsProcessor process: {}", page.getName());
-        return null;
-//        return facebookClient.getAllPosts(page.getPageId(), accessToken);
+
+        Map<FbPage, List<PostInfo>> result = new HashMap<>();
+        result.put(page, facebookClient.getAllPosts(page.getPageId(), accessToken));
+        return result;
     }
 }
